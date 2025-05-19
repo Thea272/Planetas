@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetas</title>
+</head>
+<style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+    body {
+        background-image: url("./img/estrellita.jpg");
+        width: 80%;
+        min-height: 80vh;
+        font: "Nunito", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    h1 {
+        color: bisque;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-left: 98px;
+        left: 10%;
+        bottom: 20%;
+        background-color: rgba(68, 156, 173, 0.6);
+        z-index: 1;
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    aside {
+        display: inline;
+        width: 90%;
+        height: 80%;
+    }
+
+    button {
+        font-size: large;
+    }
+
+    #astros {
+        font-size: large;
+        background-color: transparent;
+    }
+</style>
+
+<body>
+    <form>
+        <h1>El Sistema Solar</h1>
+
+        <p><button type="button" onclick="sistemaSolar()"> Acerca del Sistema Solar </button></p>
+
+        <!-- <p><button type="button" onclick="terminar()"> Terminar </button></p> YA NO SE USA -->
+
+        <div class="main">
+            <label for="astros"><b>Seleccione el astro deseado</b></label>
+            <select id="astros" onchange="verAstros()" size="14">
+                <option value="./img/asteroide.jpg">Asteroide</option>
+                <option value="./img/jupiter.jpg">Jupiter</option>
+                <option value="./img/luna.jpg">Luna</option>
+                <option value="./img/marte.jpg">Marte</option>
+                <option value="./img/mercurio.jpg">Mercurio</option>
+                <option value="./img/meteorito.jpg">Meteorito</option>
+                <option value="./img/neptuno.jpg">Neptuno</option>
+                <option value="./img/pluton.jpg">Pluton</option>
+                <option value="./img/saturno.jpg">Saturno</option>
+                <option value="./img/sol.jpg">Sol</option>
+                <option value="./img/tierra.jpg">Tierra</option>
+                <option value="./img/urano.jpg">Urano</option>
+                <option value="./img/venus.jpg">Venus</option>
+                <option value="./img/ss.jpg">Sistema Solar</option>
+            </select>
+        </div>
+        <hr>
+        <div class="aside">
+            <img id="astroFoto" src="./img/nave.jpg" alt="foto">
+
+        </div>
+
+    </form>
+    <script>
+        function verAstros() {
+            let astroSeleccionado = document.getElementById("astros").value;
+            console.log(astroSeleccionado);
+            document.getElementById("astroFoto").src = astroSeleccionado;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
